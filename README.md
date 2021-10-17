@@ -6,6 +6,7 @@ Includes `React`, `Typescript`, `Webpack` and `Styled-JSX`.
 
 Also comes with `Mocha`, `Chai`, `Sinon` and `Enzyme` for testing.
 
-| Command | |
+| Command      | Description                   |
+| ------------ | ----------------------------- |
 | `yarn start` | Starts the development server |
-| `yarn test` | Runs your unit tests |
+| `yarn test`  | Runs your unit tests          |
