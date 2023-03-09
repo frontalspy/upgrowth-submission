@@ -8,5 +8,5 @@ Also comes with `jest` and `react-testing-library` for testing.
 
 | Command      | Description                   |
 | ------------ | ----------------------------- |
-| `yarn start` | Starts the development server |
-| `yarn test`  | Runs your unit tests          |
+| `npm run start` | Starts the development server |
+| `npm test`  | Runs your unit tests          |
