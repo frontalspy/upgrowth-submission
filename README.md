@@ -2,9 +2,9 @@
 
 Another one of these things, but its a bit more strict.
 
-Includes `React`, `Typescript`, `Webpack` and `Styled-JSX`.
+Includes `React`, `Typescript`, `vite` and `Styled-Components`, and a basic `express` server.
 
-Also comes with `Mocha`, `Chai`, `Sinon` and `Enzyme` for testing.
+Also comes with `jest` and `react-testing-library` for testing.
 
 | Command      | Description                   |
 | ------------ | ----------------------------- |
