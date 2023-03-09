@@ -1,6 +1,8 @@
 import express from "express";
 import { createApi } from "unsplash-js";
 import cors from "cors";
+import fetch from "node-fetch";
+global.fetch = fetch as any;
 
 // import { searchUnsplash } from "./connections/unsplash";
 const app = express();

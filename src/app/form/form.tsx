@@ -5,7 +5,6 @@ import { useSearch } from "../context/search-context";
 import { setImages, setLoading, setSearch } from "../context/actions";
 import { fetchApi } from "../utilities/api";
 import { API } from "../utilities/consts";
-import { ImagesItf } from "../images/types";
 import { ImagesApiItf } from "./types";
 
 export const Form = () => {

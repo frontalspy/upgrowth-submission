@@ -6,7 +6,7 @@ export const Grid = styled.section`
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-gap: ${spacing.large} ${spacing.medium};
-  padding: 32px;
+  padding: ${spacing.large};
 `;
 
 export const ImageContainer = styled.div`
