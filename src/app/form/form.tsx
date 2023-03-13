@@ -1,3 +1,4 @@
+import React from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, useCallback } from "react";
@@ -6,18 +7,19 @@ import { setImages, setLoading, setSearch } from "../context/actions";
 import { fetchApi } from "../utilities/api";
 import { API } from "../utilities/consts";
 import { ImagesApiItf } from "./types";
+import { urlencoded } from "express";
 
 export const Form = () => {
   const { searchString, dispatchSearch } = useSearch();
   const handleSubmit = useCallback(
     (e: FormEvent) => {
       e.preventDefault();
-      if (!!searchString) {
+      if (searchString) {
         dispatchSearch(setLoading(true));
         // API is too quick, lets give it some time
         setTimeout(() => {
           fetchApi<ImagesApiItf>(
-            `${API}/photos/search?search=${searchString}`,
+            `${API}/photos/search?search=${encodeURIComponent(searchString)}`,
             "GET"
           )
             .then((resp) => {
@@ -27,12 +29,15 @@ export const Form = () => {
         }, 2000);
       }
     },
-    [searchString]
+    [dispatchSearch, searchString]
   );
 
-  const handleInput = useCallback((value: string) => {
-    dispatchSearch(setSearch(value));
-  }, []);
+  const handleInput = useCallback(
+    (value: string) => {
+      dispatchSearch(setSearch(value));
+    },
+    [dispatchSearch]
+  );
 
   return (
     <form onSubmit={handleSubmit}>

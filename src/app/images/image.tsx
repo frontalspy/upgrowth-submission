@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { ImagesItf } from "./types";
 import { ImageAuthor, ImageContainer, ImageFigure, ImageMeta } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +11,7 @@ export const Image: FC<ImageProps> = ({ image }) => {
   return (
     <ImageContainer>
       <ImageFigure>
-        <a href={image.links.html} target="_blank">
+        <a href={image.links.html} target="_blank" rel="noreferrer">
           <img src={image.urls.small} alt={image.altDescription} />
         </a>
       </ImageFigure>

@@ -14,9 +14,10 @@ const unsplash = createApi({
 });
 
 export const searchUnsplash = (query: any) => {
+  const encodedQuery = decodeURIComponent(query.search);
   return unsplash.search
     .getPhotos({
-      query: query.search,
+      query: encodedQuery,
       page: query.page || 1,
     })
     .then((v) => v.response);
